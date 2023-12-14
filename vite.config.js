@@ -5,7 +5,7 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/vue-company-directory/',
+  base: '/medexwebportal/',
   plugins: [vue()],
    
   resolve: {

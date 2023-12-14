@@ -8,10 +8,10 @@ import MainPagination from '@/components/MainPagination.vue';
 
 import useAPI from '@/composables/useAPI'
 
-const { getEmployees, loading } = useAPI()
+const { getStaffs, loading } = useAPI()
 
 onMounted(async () => {
-  await getEmployees()
+  await getStaffs()
 })
 </script>
 

@@ -8,7 +8,7 @@ import LoginPage from '@/components/LoginPage.vue'
 import NotFound from '@/components/NotFound.vue'
 import SettingsPage from '@/components/SettingsPage.vue'
 const routes = [
-  { path: '/vue-company-directory/', name: 'Home', component: HomePage },
+  { path: '/medexwebportal/', name: 'Home', component: HomePage },
   { path: '/login', name:'Login', component: LoginPage },
   { path: '/:pathMatch(.*)*', component: NotFound},
   { path: '/settings', name: 'Settings', component: SettingsPage, meta: { requireAuth: true}},

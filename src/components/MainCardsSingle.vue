@@ -6,30 +6,25 @@ import useAPI from '@/composables/useAPI'
 const { getDepartment } = useAPI()
 
 const selectCard = () => {
-  console.log(`${props.employee.name} selected`)
+  console.log(`${props.staff.name} selected`)
 }
 
 const props = defineProps({
-  employee: {
+  staff: {
     type: Object,
     required: true,
     default: () => {
       return {
-        createdAt: '2022-01-01',
-        departmentId: '123',
         email: 'john.doe@example.com',
-        employeeId: '123',
+        staffId: '123',
         name: 'John Doe',
-        quote: 'Really Cool quote',
-        title: 'Position',
-        updatedAt: '2022-01-01',
+        city: 'Really Cool quote',
+        position: 'Position'
       }
     },
   },
 })
 
-const departmentResponse = await getDepartment(props.employee.departmentId)
-const department = ref(departmentResponse)
 </script>
 
 <template>
@@ -38,9 +33,9 @@ const department = ref(departmentResponse)
       <img :src="faker.internet.avatar()" alt="" srcset="" />
     </div>
     <div class="card-details">
-      <p class="card-details-name">{{ props.employee.name }}</p>
-      <p class="card-details-job">{{ props.employee.title }}, {{ department.name }}</p>
-      <p class="card-details-quote">"{{ props.employee.quote }}"</p>
+      <p class="card-details-name">{{ props.staff.name }}</p>
+      <p class="card-details-job">{{ props.staff.title }}, {{ props.staff.city }}</p>
+      <p class="card-details-quote">"{{ props.staff.phone }}"</p>
     </div>
   </div>
 </template>
@@ -70,4 +65,5 @@ const department = ref(departmentResponse)
       @apply pt-4 text-lg italic text-slate-800;
     }
   }
-}</style>
+}
+</style>
